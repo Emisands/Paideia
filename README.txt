@@ -1,5 +1,5 @@
 #Projeto X
-Website de question·rios para professores e alunos desenvolvido ao longo da disciplina de Engenharia de Software 2 
+Website de question√°rios para professores e alunos desenvolvido ao longo da disciplina de Engenharia de Software 2 
 pelos alunos:
 
 ##Colaboradores
@@ -7,14 +7,14 @@ pelos alunos:
 | Bruna Rubio 			| [brurubio](https://github.com/brurubio) 		|
 | Henrique Sumitomo 		| [Hysumi](https://github.com/Hysumi) 			|
 | Isabella Lombardo 		| [newuser](https://github.com/)	  		|
-| Jo„o Paulo de Vasconcelos   	| [Emisands](https://github.com/Emisands)		|
+| Jo√£o Paulo de Vasconcelos   	| [Emisands](https://github.com/Emisands)		|
 | Karoline Setoue 		| [ksetoue](https://github.com/ksetoue) 		|
 | Matheus Borguete 		| [matheusborguete](https://github.com/matheusborguete)	|
 | Matheus Deronsi		| [newuser](https://github.com/)			|
 | Rafael Souza			| [newuser](https://github.com/)			|			
 
 
-#------------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
 
 Spectral by HTML5 UP
 html5up.net | @n33co
