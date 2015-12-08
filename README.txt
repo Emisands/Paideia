@@ -6,7 +6,7 @@ pelos alunos:
 
 | Bruna Rubio 			| [brurubio](https://github.com/brurubio) 		|
 | Henrique Sumitomo 		| [Hysumi](https://github.com/Hysumi) 			|
-| Isabella Lombardo 		| [newuser](https://github.com/)	  		|
+| Isabella Lombardo 		| [isalombardo](https://github.com/isalombardo)	  	|
 | João Paulo de Vasconcelos   	| [Emisands](https://github.com/Emisands)		|
 | Karoline Setoue 		| [ksetoue](https://github.com/ksetoue) 		|
 | Matheus Borguete 		| [matheusborguete](https://github.com/matheusborguete)	|
