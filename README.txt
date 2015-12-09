@@ -1,4 +1,4 @@
-#Projeto X
+﻿#Projeto X
 Website de questionários para professores e alunos desenvolvido ao longo da disciplina de Engenharia de Software 2 
 pelos alunos:
 
@@ -10,8 +10,8 @@ pelos alunos:
 | João Paulo de Vasconcelos   	| [Emisands](https://github.com/Emisands)		|
 | Karoline Setoue 		| [ksetoue](https://github.com/ksetoue) 		|
 | Matheus Borguete 		| [matheusborguete](https://github.com/matheusborguete)	|
-| Matheus Deronsi		| [newuser](https://github.com/)			|
-| Rafael Souza			| [newuser](https://github.com/)			|			
+| Matheus Deronsi		| [MatheusDeronsi](https://github.com/MatheusDeronsi)			|
+| Rafael Souza			| [rsouzas](https://github.com/rsouzas)			|			
 
 
 #--------------------------------------------------------------------------------------------------------#
