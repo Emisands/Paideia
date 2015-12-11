@@ -11,9 +11,9 @@ pelos alunos:
 | Karoline Setoue | [ksetoue](https://github.com/ksetoue) |
 | Matheus Borguete | [matheusborguete](https://github.com/matheusborguete)|
 | Matheus Deronsi | [MatheusDeronsi](https://github.com/MatheusDeronsi)|
-| Rafael Souza | [rsouzas](https://github.com/rsouzas)|			
+| Rafael Souza | [rsouzas](https://github.com/rsouzas)|
 
-#-----------------------------------------------------------------------------#
+###License 
 
 Spectral by HTML5 UP
 html5up.net | @n33co
