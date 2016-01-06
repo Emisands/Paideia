@@ -6,12 +6,11 @@
 
   $name= $_REQUEST['name'];
   $email= $_REQUEST['email'];
-  $password= $_REQUEST['password'];	
   $roomkey= $_REQUEST['roomkey'];
   $teacher= $_REQUEST['teacher'];
   
   $sql = "INSERT INTO register VALUES";
-  $sql .= "('$name', '$email', '$password', '$roomkey', '$teacher')";
+  $sql .= "('$name', '$email', '$roomkey', '$teacher')";
   $resultado = mysql_query ($sql);
 
 	
