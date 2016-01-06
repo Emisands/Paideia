@@ -1,5 +1,5 @@
-﻿#Projeto X
-Website de questionários para professores e alunos desenvolvido ao longo da disciplina de Engenharia de Software 2 
+﻿#PADEIA
+Website de questionários para professores e alunos desenvolvido ao longo da disciplina de Engenharia de Software 2
 pelos alunos:
 ##Colaboradores
 | Nome | Usuário GitHub |
@@ -13,7 +13,7 @@ pelos alunos:
 | Matheus Deronsi | [MatheusDeronsi](https://github.com/MatheusDeronsi)|
 | Rafael Souza | [rsouzas](https://github.com/rsouzas)|
 
-###License 
+###License
 
 Spectral by HTML5 UP
 html5up.net | @n33co
