@@ -6,12 +6,33 @@
 -->
 <html>
 	<head>
-		<?php include"functions.php"; echo "$nome"; ?>
+		<?php 
+			include "config.php";
+			session_start(); 
+			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true)) 
+				{ 
+					unset($_SESSION['cad-email']); 
+					unset($_SESSION['cad-pass']); 
+					header('./login.html'); 
+				} 
+				$email = $_SESSION['cad-email'];
+				$sql = mysql_query("SELECT name, InstID FROM account WHERE email = '$email'");
+				while($row = mysql_fetch_array($sql))
+					{
+				      $nome = $row["name"];
+				      $id_instituicao = $row["InstID"];
+				    }
+				$sql = mysql_query("SELECT name FROM instituicao WHERE instID = '$id_instituicao'");
+				while($row = mysql_fetch_array($sql))
+					{
+				      $nome_inst = $row["name"];
+				    }
+			?>
 		<title>Paideia - Sistema de educação</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="http://www.formmail-maker.com/var/demo/jquery-popup-form/colorbox.css" />
         <!-- <script src="http://www.formmail-maker.com/var/demo/jquery-popup-form/jquery.colorbox-min.js"></script> -->
 
@@ -55,7 +76,7 @@
 							<div class="inner">
 								<section>
 									<header>
-										<h4>Bem-vindo, <?php echo "$nome"; ?></h4> 
+										<h4><?php echo "$nome - $nome_inst"; ?></h4> 
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
