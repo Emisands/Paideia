@@ -6,27 +6,10 @@
 -->
 <html>
 	<head>
-			<?php
-			include "config.php";
-			session_start();
-			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true))
-				{
-					unset($_SESSION['cad-email']);
-					unset($_SESSION['cad-pass']);
-					header('./login.html');
-				}
-				$email = $_SESSION['cad-email'];
-				$sql = mysql_query("SELECT name, InstID FROM account WHERE email = '$email'");
-				while($row = mysql_fetch_array($sql))
-					{
-				      $nome = $row["name"];
-				      $id_instituicao = $row["InstID"];
-				    }
-				$sql = mysql_query("SELECT name FROM instituicao WHERE instID = '$id_instituicao'");
-				while($row = mysql_fetch_array($sql))
-					{
-				      $nome_inst = $row["name"];
-				    }
+			<?php 
+				include "config.php";
+				session_start(); 
+				include "functions.php";
 			?>
 		<title>Paideia - Sistema de educação</title>
 		<meta charset="utf-8" />
@@ -43,11 +26,20 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="../index.html">Padeia</a></h1>
+						<h1><a href="index.html">Padeia</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="logout.php" class=""><span>Logout</span></a>
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="generic.html">Generic</a></li>
+											<li><a href="elements.html">Elements</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
 								</li>
 							</ul>
 						</nav>
@@ -59,14 +51,20 @@
 
 								<section>
 									<header>
-										<h4>Bem-vindo, <?php echo "$nome"; ?></h4>
+										<h4>Bem-vindo, <?php echo "".nameCheck($email).""; ?></h4> 
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
 											<br/>
 											<h5>Instituição</h5>
 											<ul class="alt">
-												<li> <a href="../instituteaccount.html"><?php echo "$nome_inst"; ?></a></li>
+												<li> <a href="../instituteaccount.html">
+												<?php
+													$name = nameCheck($email);
+													$inst = instCheck($name, $email);
+													echo "$inst";
+												?>
+												</a></li>
 												<li><a href="#">Instituição 2.</a></li>
 												<li><a href="#">Instituição 3.</a></li>
 											</ul>

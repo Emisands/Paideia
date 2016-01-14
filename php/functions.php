@@ -1,14 +1,26 @@
 <?php
- 
-function session_checker(){
- 
-    if (!isset($_SESSION['cad-email'])){
- 
-        header ("Location:login.php");
-        exit(); 
- 
-    }
- 
+
+if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true)) 
+	{ 
+		unset($_SESSION['cad-email']); 
+		unset($_SESSION['cad-pass']); 
+		header('./login.html'); 
+	} 
+	$email = $_SESSION['cad-email'];
+
+function nameCheck($email) {
+	$sql = mysql_query("SELECT name, InstID FROM account WHERE email = '".$email."'");
+	$row = mysql_fetch_array($sql);
+	return $row['name'];
 }
- 
+	
+function instCheck($name, $email) {
+	$sql = mysql_query("SELECT InstID FROM account WHERE email = '".$email."' and name = '".$name."'");
+	$row = mysql_fetch_array($sql);
+	$id_instituicao = $row['InstID'];
+
+	$sql2 = mysql_query("SELECT name FROM instituicao WHERE instID = '".$id_instituicao."'");
+	$row2 = mysql_fetch_array($sql2);
+	return $row2['name'];
+}
 ?>
