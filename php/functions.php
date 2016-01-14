@@ -13,6 +13,11 @@ function nameCheck($email) {
 	$row = mysql_fetch_array($sql);
 	return $row['name'];
 }
+function iduserCheck($email) {
+	$sql = mysql_query("SELECT IDUser FROM account WHERE email = '".$email."'");
+	$row = mysql_fetch_array($sql);
+	return $row['IDUser'];
+}
 	
 function instCheck($name, $email) {
 	$sql = mysql_query("SELECT InstID FROM account WHERE email = '".$email."' and name = '".$name."'");

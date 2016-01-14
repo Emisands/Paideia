@@ -52,7 +52,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Padeia</a></h1>
+						<h1><a href="index.html">Paideia</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -84,7 +84,7 @@
 										<!-- Se prof vai pra newclass.html
 											Se aluno vai pra enterclass.html -->
 											<ul class="actions">
-												<li><a class='iframe' href="enterclass.html"><input type="submit" value="+" class="special" /></a></li>
+												<li><a class='iframe' href="enterclass.php"><input type="submit" value="+" class="special" /></a></li>
 												<!-- <a href="register.html" class="button">SignUP</a> -->
 												<!-- colocar no botão o link -->
         		<!-- <p><h3>Click here for the popup form demo : <a class='iframe' href="/newclass.php">Contact Us</a></h3></p> -->

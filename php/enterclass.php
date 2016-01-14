@@ -10,7 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="http://www.formmail-maker.com/var/demo/jquery-popup-form/colorbox.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -22,23 +22,14 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Padeia</a></h1>
-				<!--		<nav id="nav">
+						<h1><a href="index.html">Paideia</a></h1>
+						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
-										</ul>
-									</div>
+									<a href="logout.php" class=""><span>Logout</span></a>
 								</li>
 							</ul>
-						</nav> -->
+						</nav>
 					</header>
 
 
@@ -47,12 +38,12 @@
 
 								<section>
 									<center><h4>Nova Sala</h4></center>
-									<form name ="enterClass" method="post" action="#">
+									<form name ="enterClass" method="post" action="entrasala.php">
 										<div class="">
 										<center>
 										</br>
 											<div class="6u$ 12u$(xsmall)">
-												<input type="text" name="class-Cod" id="class-Cod" value="" placeholder="Código da Sala" />
+												<input type="text" name="class-cod" id="class-cod" value="" placeholder="Código da Sala" />
 											</div>
 										</br>
 										</br>
@@ -70,7 +61,7 @@
 
 							</div>
 						</section>
-					<!-- </article> -->
+					<!-- </article> 
 
 
 			</div>
