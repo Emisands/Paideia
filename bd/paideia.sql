@@ -16,16 +16,17 @@ CREATE TABLE Answers
 (
 	ANID                 INTEGER NOT NULL,
 	correct              boolean NULL,
-	text_answer          TEXT NULL
+	text_answer          TEXT NULL,
+	QID                  INTEGER NOT NULL,
+	FID                  INTEGER NOT NULL
 );
 
 ALTER TABLE Answers
-ADD PRIMARY KEY (ANID);
+ADD PRIMARY KEY (ANID,QID,FID);
 
 CREATE TABLE Form
 (
 	FID                  INTEGER NOT NULL,
-	subject              VARCHAR(20) NULL,
 	name                 VARCHAR(50) NULL,
 	RID                  INTEGER NULL
 );
@@ -33,7 +34,7 @@ CREATE TABLE Form
 ALTER TABLE Form
 ADD PRIMARY KEY (FID);
 
-CREATE TABLE Instituicao
+CREATE TABLE Instituição
 (
 	InstID               INTEGER NOT NULL,
 	name                 VARCHAR(40) NULL,
@@ -43,7 +44,7 @@ CREATE TABLE Instituicao
 	estado               VARCHAR(20) NULL
 );
 
-ALTER TABLE Instituicao
+ALTER TABLE Instituição
 ADD PRIMARY KEY (InstID);
 
 CREATE TABLE Lista_Membros
@@ -66,41 +67,22 @@ CREATE TABLE Questions
 ALTER TABLE Questions
 ADD PRIMARY KEY (QID,FID);
 
-CREATE TABLE Questions_Answers
-(
-	QID                  INTEGER NOT NULL,
-	ANID                 INTEGER NOT NULL,
-	FID                  INTEGER NOT NULL
-);
-
-ALTER TABLE Questions_Answers
-ADD PRIMARY KEY (QID,ANID,FID);
-
 CREATE TABLE Room
 (
 	RID                  INTEGER NOT NULL,
 	Room_Name            VARCHAR(40) NULL,
-	IDUser               INTEGER NULL
+	IDUser               INTEGER NULL,
+	InstID               INTEGER NOT NULL
 );
 
 ALTER TABLE Room
 ADD PRIMARY KEY (RID);
 
-CREATE TABLE Session
-(
-	UserAnswer           VARCHAR(20) NULL,
-	QID                  INTEGER NOT NULL,
-	ANID                 INTEGER NOT NULL,
-	FID                  INTEGER NOT NULL,
-	RID                  INTEGER NOT NULL,
-	IDUser               INTEGER NOT NULL
-);
-
-ALTER TABLE Session
-ADD PRIMARY KEY (QID,ANID,FID,RID,IDUser);
-
 ALTER TABLE Account
-ADD CONSTRAINT R_23 FOREIGN KEY (InstID) REFERENCES Instituicao (InstID);
+ADD CONSTRAINT R_23 FOREIGN KEY (InstID) REFERENCES Instituição (InstID);
+
+ALTER TABLE Answers
+ADD CONSTRAINT R_24 FOREIGN KEY (QID, FID) REFERENCES Questions (QID, FID);
 
 ALTER TABLE Form
 ADD CONSTRAINT R_15 FOREIGN KEY (RID) REFERENCES Room (RID);
@@ -114,23 +96,8 @@ ADD CONSTRAINT R_19 FOREIGN KEY (IDUser) REFERENCES Account (IDUser);
 ALTER TABLE Questions
 ADD CONSTRAINT R_22 FOREIGN KEY (FID) REFERENCES Form (FID);
 
-ALTER TABLE Questions_Answers
-ADD CONSTRAINT R_2 FOREIGN KEY (QID, FID) REFERENCES Questions (QID, FID);
-
-ALTER TABLE Questions_Answers
-ADD CONSTRAINT R_3 FOREIGN KEY (ANID) REFERENCES Answers (ANID);
-
 ALTER TABLE Room
 ADD CONSTRAINT R_14 FOREIGN KEY (IDUser) REFERENCES Account (IDUser);
 
-ALTER TABLE Session
-ADD CONSTRAINT R_5 FOREIGN KEY (IDUser) REFERENCES Account (IDUser);
-
-ALTER TABLE Session
-ADD CONSTRAINT R_10 FOREIGN KEY (QID, ANID, FID) REFERENCES Questions_Answers (QID, ANID, FID);
-
-ALTER TABLE Session
-ADD CONSTRAINT R_12 FOREIGN KEY (FID) REFERENCES Form (FID);
-
-ALTER TABLE Session
-ADD CONSTRAINT R_13 FOREIGN KEY (RID) REFERENCES Room (RID);
+ALTER TABLE Room
+ADD CONSTRAINT R_25 FOREIGN KEY (InstID) REFERENCES Instituição (InstID);
