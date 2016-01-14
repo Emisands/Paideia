@@ -6,18 +6,23 @@
 -->
 <html>
 	<head>
-	
-
+		<?php include"functions.php"; echo "$nome"; ?>
 		<title>Paideia - Sistema de educação</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		
+		<link rel="stylesheet" href="http://www.formmail-maker.com/var/demo/jquery-popup-form/colorbox.css" />
+        <!-- <script src="http://www.formmail-maker.com/var/demo/jquery-popup-form/jquery.colorbox-min.js"></script> -->
 
-
+        <script>
+            $(document).ready(function(){
+                $(".iframe").colorbox({iframe:true, fastIframe:false, width:"450px", height:"480px", transition:"fade", scrolling   : false});
+            });
+        </script>        
+        <style>
+            #cboxOverlay{ background:#666666; }
+        </style>
 	</head>
 	<body>
 
@@ -48,20 +53,32 @@
 				<!-- Main -->
 						<section class="wrapper style5">
 							<div class="inner">
-
 								<section>
 									<header>
-										<h4>Bem-vindo,usuário</h4> <?php echo "Bem vindo $cad-email"; ?>
+										<h4>Bem-vindo, <?php echo "$nome"; ?></h4> 
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
-											<h5>Instituição</h5>
+											<h5>Salas</h5>
 											<ul class="alt">
-												<li><a href="#">Instituição 1.</a></li>
-												<li><a href="#">Instituição 2.</a></li>
-												<li><a href="#">Instituição 3.</a></li>
+												<li><a href="#">Sala 1.</a></li>
+												<li><a href="#">Sala 2.</a></li>
+												<li><a href="#">Sala 3.</a></li>
 											</ul>
 										</div>
+									</div>
+									<div class="12u$">
+										<center>
+										<!-- Se prof vai pra newclass.html
+											Se aluno vai pra enterclass.html -->
+											<ul class="actions">
+												<li><a class='iframe' href="enterclass.html"><input type="submit" value="+" class="special" /></a></li>
+												<!-- <a href="register.html" class="button">SignUP</a> -->
+												<!-- colocar no botão o link -->
+        		<!-- <p><h3>Click here for the popup form demo : <a class='iframe' href="/newclass.php">Contact Us</a></h3></p> -->
+
+											</ul>
+										</center>
 									</div>
 								</section>
 
@@ -79,6 +96,11 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.colorbox-min.js"></script>
+			<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+			<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        
 
 	</body>
 </html>

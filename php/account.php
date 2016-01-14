@@ -6,18 +6,35 @@
 -->
 <html>
 	<head>
-	
-
+			<?php 
+			include "config.php";
+			session_start(); 
+			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true)) 
+				{ 
+					unset($_SESSION['cad-email']); 
+					unset($_SESSION['cad-pass']); 
+					header('./login.html'); 
+				} 
+				$email = $_SESSION['cad-email'];
+				$sql = mysql_query("SELECT name, InstID FROM account WHERE email = '$email'");
+				while($row = mysql_fetch_array($sql))
+					{
+				      $nome = $row["name"];
+				      $id_instituicao = $row["InstID"];
+				    }
+				$sql = mysql_query("SELECT name FROM instituicao WHERE instID = '$id_instituicao'");
+				while($row = mysql_fetch_array($sql))
+					{
+				      $nome_inst = $row["name"];
+				    }
+			?>
 		<title>Paideia - Sistema de educação</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		
-
-
 	</head>
 	<body>
 
@@ -51,13 +68,14 @@
 
 								<section>
 									<header>
-										<h4>Bem-vindo,usuário</h4> <?php echo "Bem vindo $cad-email"; ?>
+										<h4>Bem-vindo, <?php echo "$nome"; ?></h4> 
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
+											<br/>
 											<h5>Instituição</h5>
 											<ul class="alt">
-												<li><a href="#">Instituição 1.</a></li>
+												<li> <a href="../instituteaccount.html"><?php echo "$nome_inst"; ?></a></li>
 												<li><a href="#">Instituição 2.</a></li>
 												<li><a href="#">Instituição 3.</a></li>
 											</ul>

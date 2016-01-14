@@ -18,7 +18,7 @@
 		//$sql = mysql_query("SELECT IDUser FROM account WHERE email='$email'");
 		//$id_user = mysql_result($sql, 0);
 		// $_SESSION['id_login'] = $result[0];
-		header("Location: ../account.html");
+		header("Location: ./account.php");
 	}else{
 		echo "<script> alert('Usuário e/ou senha incorreto(s)'); history.back(); </script>";
 		//header("Location: ../login.html");
