@@ -26,7 +26,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Padeia</a></h1>
+						<h1><a href="index.html">Paideia</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -49,7 +49,7 @@
 											<br/>
 											<h5>Instituição</h5>
 											<ul class="alt">
-												<li> <a href="../instituteaccount.html">
+												<li> <a href="instituteaccount.php">
 												<?php
 													$name = nameCheck($email);
 													$inst = instCheck($name, $email);

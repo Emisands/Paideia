@@ -6,11 +6,16 @@
 -->
 <html>
 	<head>
+		<?php
+			include "config.php";
+			session_start();
+			include "functions.php";
+		?>
 		<title>Paideia - Sistema de educação</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
@@ -21,20 +26,11 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Padeia</a></h1>
+						<h1><a href="index.html">Paideia</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
-										</ul>
-									</div>
+									<a href="logout.php" class=""><span>Logout</span></a>
 								</li>
 							</ul>
 						</nav>
@@ -51,12 +47,17 @@
 							<div class="inner">
 
 								<section>
-									<center><h4>Instituição Nome</h4></center>
+
+									<center><h4>Instituição <?php
+													$name = nameCheck($email);
+													$inst = instCheck($name, $email);
+													echo "$inst";
+												?></h4></center>
 									</br>
 										<center>
 												<ul class="actions">
-												<li><a class='iframe' href="php/classrooms.php"><input type="submit" value="Salas" class="special" /></a></li>
-												<li><a class='iframe' href="php/questionnaire.php"><input type="submit" value="Questionários" class="special" /></a></li>
+												<li><a class='iframe' href="classrooms.php"><input type="submit" value="Salas" class="special" /></a></li>
+												<li><a class='iframe' href="questionnaire.php"><input type="submit" value="Questionários" class="special" /></a></li>
 												</ul>
 										</center>
 								</section>
