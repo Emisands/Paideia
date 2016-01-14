@@ -6,9 +6,9 @@
 -->
 <html>
 	<head>
-			<?php 
+			<?php
 				include "config.php";
-				session_start(); 
+				session_start();
 				include "functions.php";
 			?>
 		<title>Paideia - Sistema de educação</title>
@@ -30,16 +30,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
-										</ul>
-									</div>
+									<a href="logout.php" class=""><span>Logout</span></a>
 								</li>
 							</ul>
 						</nav>
@@ -51,7 +42,7 @@
 
 								<section>
 									<header>
-										<h4>Bem-vindo, <?php echo "".nameCheck($email).""; ?></h4> 
+										<h4>Bem-vindo, <?php echo "".nameCheck($email).""; ?></h4>
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
