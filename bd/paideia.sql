@@ -34,7 +34,7 @@ CREATE TABLE Form
 ALTER TABLE Form
 ADD PRIMARY KEY (FID);
 
-CREATE TABLE Instituição
+CREATE TABLE Instituicao
 (
 	InstID               INTEGER NOT NULL,
 	name                 VARCHAR(40) NULL,
@@ -44,7 +44,7 @@ CREATE TABLE Instituição
 	estado               VARCHAR(20) NULL
 );
 
-ALTER TABLE Instituição
+ALTER TABLE Instituicao
 ADD PRIMARY KEY (InstID);
 
 CREATE TABLE Lista_Membros
