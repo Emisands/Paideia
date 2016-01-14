@@ -1,4 +1,4 @@
 <?php
-	$conexao = mysql_connect ("localhost", "user", "senha");
-	mysql_select_db ("padeia");
+	$conexao = mysql_connect ("localhost", "root", "");
+	mysql_select_db ("paideia");
 ?>
