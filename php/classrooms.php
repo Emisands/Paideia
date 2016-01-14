@@ -6,15 +6,15 @@
 -->
 <html>
 	<head>
-		<?php 
+		<?php
 			include "config.php";
-			session_start(); 
-			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true)) 
-				{ 
-					unset($_SESSION['cad-email']); 
-					unset($_SESSION['cad-pass']); 
-					header('./login.html'); 
-				} 
+			session_start();
+			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true))
+				{
+					unset($_SESSION['cad-email']);
+					unset($_SESSION['cad-pass']);
+					header('./login.html');
+				}
 				$email = $_SESSION['cad-email'];
 				$sql = mysql_query("SELECT name, InstID FROM account WHERE email = '$email'");
 				while($row = mysql_fetch_array($sql))
@@ -40,7 +40,7 @@
             $(document).ready(function(){
                 $(".iframe").colorbox({iframe:true, fastIframe:false, width:"450px", height:"480px", transition:"fade", scrolling   : false});
             });
-        </script>        
+        </script>
         <style>
             #cboxOverlay{ background:#666666; }
         </style>
@@ -56,16 +56,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
-										</ul>
-									</div>
+									<a href="logout.php" class=""><span>Logout</span></a>
 								</li>
 							</ul>
 						</nav>
@@ -76,7 +67,7 @@
 							<div class="inner">
 								<section>
 									<header>
-										<h4><?php echo "$nome - $nome_inst"; ?></h4> 
+										<h4><?php echo "$nome - $nome_inst"; ?></h4>
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
@@ -121,7 +112,7 @@
 			<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 			<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        
+
 
 	</body>
 </html>
