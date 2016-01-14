@@ -44,6 +44,7 @@
 	
 	 mysql_close($conexao);
    echo "<script> alert('Usuário cadastrado com sucesso!'); history.back(); </script>";
+   header("Location:../login.html");
   }
 
   else echo "<script> alert('Senhas não conferem'); history.back(); </script>";
