@@ -9,6 +9,7 @@
 		<?php 
 			include "config.php";
 			session_start(); 
+			include "functions.php";
 			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true)) 
 				{ 
 					unset($_SESSION['cad-email']); 
@@ -52,7 +53,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Padeia</a></h1>
+						<h1><a href="index.html">Paideia</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -72,18 +73,22 @@
 									<div class="row">
 										<div class="6u 12u$(medium)">
 											<h5>Questionários</h5>
-											<ul class="alt">
-												<li><a href="#">Questionário 1.</a></li>
-												<li><a href="#">
-												Questionário 2.</a></li>
-												<li><a href="#">Questionário 3.</a></li>
-											</ul>
+												<?php
+													$iduser = iduserCheck($email);
+													$consulta = mysql_query("SELECT f.name FROM form f, room r, lista_membros l WHERE f.RID = r.RID and l.RID = r.RID and l.IDUser = ".$iduser."");
+													while($row = mysql_fetch_array($consulta))
+													{
+														$aux = $row["name"];
+														echo "<a href='questionnaire.php'>".$aux."</a> </br>";
+
+													}
+												?>
 										</div>
 									</div>
 									<div class="12u$">
 										<center>
 											<ul class="actions">
-												<li><a class='iframe' href="newquest.html"><input type="submit" value="+" class="special" /></a></li>
+												<li><a class='iframe' href="newquest.php"><input type="submit" value="+" class="special" /></a></li>
 											</ul>
 										</center>
 									</div>
