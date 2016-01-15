@@ -1,4 +1,4 @@
-﻿#PADEIA
+﻿#PAIDEIA
 Website de questionários para professores e alunos desenvolvido ao longo da disciplina de Engenharia de Software 2
 pelos alunos:
 ##Colaboradores
