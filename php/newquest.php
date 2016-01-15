@@ -43,6 +43,10 @@
 											</div>
 										</br>
 											<div class="6u 12u$(xsmall)">
+												<textarea name="sala-pertence" id="sala-pertence" placeholder="ID da sala dona do questionário"></textarea>
+											</div>
+										</br>
+										<div class="6u 12u$(xsmall)">
 												<textarea name="quest-message" id="quest-message" placeholder="Escreva a questão" rows="6"></textarea>
 											</div>
 										</br>

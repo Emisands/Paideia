@@ -8,6 +8,7 @@
 
     $questmessage = $_POST['quest-message'];
     
+    $id_sala_questionario = $POST['sala-pertence'];
 
     $consulta = mysql_query("SELECT max(QID) FROM questions");
 
@@ -29,8 +30,12 @@
       $newfid = 1;
     else ++$newfid;
 
-    $sql = "INSERT INTO form VALUES (".$newfid.", '$questtittle', 0)";
+
+    //Alterar aqui
+    $sql = "INSERT INTO form VALUES (".$newfid.", '$questtittle', $id_sala_questionario)";
     $resultado = mysql_query ($sql);
+
+
 
     $sql = "INSERT INTO questions VALUES (".$newqid.", '$questmessage', ".$newfid.", 's/ imagem')";
     $resultado = mysql_query ($sql);
