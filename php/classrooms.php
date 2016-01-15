@@ -74,21 +74,28 @@
 										<div class="6u 12u$(medium)">
 											<h5>Salas:</h5>
 											<?php
-												$iduser = iduserCheck($email);
-												$consulta = mysql_query("SELECT r.Room_Name FROM lista_membros l, room r WHERE l.RID = r.RID and l.IDUser = ".$iduser."");
-												while($row = mysql_fetch_array($consulta))
+											$job = jobCheck($email);
+											$iduser = iduserCheck($email);
+												if($job == 0)
 												{
-													$aux = $row["Room_Name"];
-													echo "<a href='questionnaire.php'>".$aux."</a> </br>";
+													
+													$consulta = mysql_query("SELECT r.Room_Name FROM lista_membros l, room r WHERE l.RID = r.RID and l.IDUser = ".$iduser."");
+													while($row = mysql_fetch_array($consulta))
+													{
+														$aux = $row["Room_Name"];
+														echo "<a href='questionnaire.php'>".$aux."</a> </br>";
 
+													}
 												}
-
-												$consulta = mysql_query("SELECT r.Room_Name FROM room r WHERE r.IDUser = ".$iduser."");
-												while($row = mysql_fetch_array($consulta))
+												else
 												{
-													$aux = $row["Room_Name"];
-													echo "<a href='questionnaire.php'>".$aux."</a> </br>";
+													$consulta = mysql_query("SELECT r.Room_Name FROM room r WHERE r.IDUser = ".$iduser."");
+													while($row = mysql_fetch_array($consulta))
+													{
+														$aux = $row["Room_Name"];
+														echo "<a href='questionnaire.php'>".$aux."</a> </br>";
 
+													}
 												}
 
 											?>
