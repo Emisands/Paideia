@@ -50,35 +50,35 @@
 											<div class="6u$ 12u$(xsmall)">
 												<input type="text" name="altern-01" id="altern-01" value="" placeholder="Alternativa a" />
 												</br> 
-												<input type="radio" id="reg-priority-1" name="reg-priority">
+												<input type="radio" id="reg-priority-1" name="reg-priority" value="1">
 												<label for="reg-priority-1">Correta</label>											
 											</br>
 										</br>
 											
 												<input type="text" name="altern-02" id="altern-02" value="" placeholder="Alternativa b" />
 												</br>
-												<input type="radio" id="reg-priority-2" name="reg-priority">
+												<input type="radio" id="reg-priority-2" name="reg-priority"  value="2">
 												<label for="reg-priority-2">Correta</label>
 												</br>
 										</br>
 											
 												<input type="text" name="altern-03" id="altern-03" value="" placeholder="Alternativa c" />
 												</br>
-												<input type="radio" id="reg-priority-3" name="reg-priority">
+												<input type="radio" id="reg-priority-3" name="reg-priority" value="3">
 												<label for="reg-priority-3">Correta</label>
 												</br>
 										</br>
 											
 												<input type="text" name="altern-04" id="altern-04" value="" placeholder="Alternativa d" />
 												</br>
-												<input type="radio" id="reg-priority-4" name="reg-priority">
+												<input type="radio" id="reg-priority-4" name="reg-priority" value="4">
 												<label for="reg-priority-4">Correta</label>
 												</br>
 										</br>
 											
 												<input type="text" name="altern-05" id="altern-05" value="" placeholder="Alternativa e" />
 												</br>
-												<input type="radio" id="reg-priority-5" name="reg-priority">
+												<input type="radio" id="reg-priority-5" name="reg-priority" value="5">
 												<label for="reg-priority-5">Correta</label>
 											</br>
 											</div>								

@@ -3,13 +3,11 @@
         
     session_start();
 
-    if (isset($_POST['quest-tittle'])) {
-      $questtittle = $_POST['quest-tittle'];
-    }
 
-    if (isset($_POST['quest-message'])) {
-      $questmessage = $_POST['quest-message'];
-    }
+    $questtittle = $_POST['quest-tittle'];
+
+    $questmessage = $_POST['quest-message'];
+    
 
     $consulta = mysql_query("SELECT max(QID) FROM questions");
 
@@ -36,6 +34,25 @@
 
     $sql = "INSERT INTO questions VALUES (".$newqid.", '$questmessage', ".$newfid.", 's/ imagem')";
     $resultado = mysql_query ($sql);
+
+    
+    for ($i = 1; $i <=5; $i++)
+      {
+   
+        $correto = $_POST['reg-priority'];
+        $text = $_POST['altern-0'.$i.''];
+
+
+        if ($correto == $i){
+           $sql = "INSERT INTO answers VALUES (".$i.", 1, '$text', ".$newqid.", ".$newfid.")";
+           $resultado = mysql_query ($sql);
+        }
+        else {
+           $sql = "INSERT INTO answers VALUES (".$i.", 0, '$text', ".$newqid.", ".$newfid.")";
+           $resultado = mysql_query ($sql);
+        }
+
+     }
 
 	
 	  mysql_close($conexao);
