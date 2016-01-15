@@ -90,8 +90,20 @@
 										<!-- Se prof vai pra newclass.html
 											Se aluno vai pra enterclass.html -->
 											<ul class="actions">
-												<li><a class='iframe' href="enterclass.php"><input type="submit" value="Entrar" class="special" /></a></li>
-												<li><a class='iframe' href="../criasala.html"><input type="submit" value="Criar" class="special" /></a></li>
+													<!-- Checa se é professor ou aluno -->
+												<?php
+													$job = jobCheck($email);
+													if($job == 0)
+													{
+														echo "<li><a class='iframe' href='enterclass.php'><input type='submit' value='Entrar' class='special' /></a></li>"; 
+													}
+													else
+													{
+														echo "<li><a class='iframe' href='../criasala.html'><input type='submit' value='Criar' class='special' /></a></li>";
+													}
+												?>
+												<!-- <li><a class='iframe' href="enterclass.php"><input type="submit" value="Entrar" class="special" /></a></li> 
+												<li><a class='iframe' href="../criasala.html"><input type="submit" value="Criar" class="special" /></a></li> -->
 												<!-- <a href="register.html" class="button">SignUP</a> -->
 												<!-- colocar no botão o link -->
         		<!-- <p><h3>Click here for the popup form demo : <a class='iframe' href="/newclass.php">Contact Us</a></h3></p> -->

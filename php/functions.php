@@ -28,4 +28,10 @@ function instCheck($name, $email) {
 	$row2 = mysql_fetch_array($sql2);
 	return $row2['name'];
 }
+
+function jobCheck($email) {
+	$sql = mysql_query("SELECT tipo_user FROM account WHERE email = '".$email."'");
+	$row = mysql_fetch_array($sql);
+	return $row['tipo_user'];
+}
 ?>
