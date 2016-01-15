@@ -82,6 +82,15 @@
 													echo "<a href='questionnaire.php'>".$aux."</a> </br>";
 
 												}
+
+												$consulta = mysql_query("SELECT r.Room_Name FROM room r WHERE r.IDUser = ".$iduser."");
+												while($row = mysql_fetch_array($consulta))
+												{
+													$aux = $row["Room_Name"];
+													echo "<a href='questionnaire.php'>".$aux."</a> </br>";
+
+												}
+
 											?>
 										</div>
 									</div>
