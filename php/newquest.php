@@ -22,7 +22,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Padeia</a></h1>
+						<h1><a href="index.html">Paideia</a></h1>
 					</header>
 
 
@@ -33,7 +33,7 @@
 									<center><h4>Novo Questionário</h4></center>
 								<!-- </br> -->
 								<!-- Se for professor casatra nova sala -->
-									<form name ="newQuestCad" method="post" action="#">
+									<form name ="newQuestCad" method="post" action="adicionarquest.php">
 										<div class="">
 										<center>
 										</br>
