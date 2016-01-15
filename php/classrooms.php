@@ -9,6 +9,7 @@
 		<?php
 			include "config.php";
 			session_start();
+			include "functions.php";
 			if((!isset ($_SESSION['cad-email']) == true) and (!isset ($_SESSION['cad-pass']) == true))
 				{
 					unset($_SESSION['cad-email']);
@@ -71,12 +72,17 @@
 									</header>
 									<div class="row">
 										<div class="6u 12u$(medium)">
-											<h5>Salas</h5>
-											<ul class="alt">
-												<li><a href="#">Sala 1.</a></li>
-												<li><a href="#">Sala 2.</a></li>
-												<li><a href="#">Sala 3.</a></li>
-											</ul>
+											<h5>Salas:</h5>
+											<?php
+												$iduser = iduserCheck($email);
+												$consulta = mysql_query("SELECT r.Room_Name FROM lista_membros l, room r WHERE l.RID = r.RID and l.IDUser = ".$iduser."");
+												while($row = mysql_fetch_array($consulta))
+												{
+													$aux = $row["Room_Name"];
+													echo "<a href='questionnaire.php'>".$aux."</a> </br>";
+
+												}
+											?>
 										</div>
 									</div>
 									<div class="12u$">
